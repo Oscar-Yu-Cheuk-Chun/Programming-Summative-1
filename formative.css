@@ -19,6 +19,7 @@ body{
   position: relative;
   display: flex;
   justify-content: space-between;
+  padding-bottom: 0px;
 }
 
 .nav-link-item{
@@ -61,6 +62,7 @@ body{
 .art-header {
   display: flex;
   justify-content: space-between;
+  padding-top: 5px;
 }
 
 .art-header-right{

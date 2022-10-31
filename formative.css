@@ -3,10 +3,14 @@
   src: url(https://fonts.googleapis.com/css?family=Barlow);
 }
 
+
+
 body{ 
   background-color: rgb(223, 223, 223);
   font-family: barlow;
   margin-bottom: 10em;
+  background-image: url(background.webp);
+  background-repeat:repeat;
 }
 
 .container {
@@ -70,12 +74,11 @@ body{
   flex-direction: column-reverse;
 }
 
-.art-img {
+.art-img {  
   display: flex;
   align-content: center;
   height: 100%;
   max-height: 400px;
-
 }
 
 .art-img img{

@@ -51,7 +51,7 @@ Run code through a web server with Python shell / terminal
 - The next section is a form which ask users which artist and what artwork they want to see in the future, users can either input in one or both of the questions.
 
 ![Alt text](/image/input.png?raw=true "Optional Title")
-- if the users sucessfully input any value in one or both of the questions, an alert will pop up indicates a sucessful submittion 
+- if the users sucessfully input any value in one or both of the questions, an alert will pop up indicates a sucessful submittion, the inputs will be saved in JavaScript
 
 ![Alt text](/image/sucess.png?raw=true "Optional Title")
 

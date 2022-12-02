@@ -39,9 +39,9 @@ chartBtn[1].addEventListener('click', function () {
  class WishClass {
   /**
    * Create a class
-   * @param {*} id - the unique timecode as id for each request submitted
-   * @param {*} artistWish - the artist name that user submitted
-   * @param {*} artworkWish - the artwork name that user submitted
+   * @param {number} id - the unique timecode as id for each request submitted
+   * @param {string} artistWish - the artist name that user submitted
+   * @param {string} artworkWish - the artwork name that user submitted
    */
   constructor (id, artistWish, artworkWish) {
     this.id = id;
@@ -65,7 +65,7 @@ const artistWish = document.getElementById('artistWish');
 const artworkWish = document.getElementById('artworkWish');
 
 /**
- * Used to reset the form after every user input
+ * Refers to the form element in HTML, used to reset the form after every user input
  * @type {HTMLElement}
  * @param  {} form
  */
@@ -77,6 +77,7 @@ const form = document.getElementById('form');
  */
 const wishlist = [];
 
+//  DOM
 document.addEventListener('DOMContentLoaded', () => {
   // trigger event when user click submit button in the input section
   document.getElementById('submit').addEventListener('click', (event) => {
@@ -86,13 +87,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (artistWish.value === '' && artworkWish.value === '') {
       window.alert('PLEASE ENTER SOMETHING!!');
     } else {
-      //  push the id timecode and the user input into the wish object with WishClass
+      //  push the id timecode and the user input and save into the wish object with WishClass
       const wish = new WishClass(Date.now(), artistWish.value, artworkWish.value);
       wishlist.push(wish);
       //  resets the form
       form.reset();
       //  notice the user that they have ucessfully submitted their request
       window.alert('You have sucessfully submitted your request!!');
+      //  documenting the inputs in the console
       console.log(wishlist);
     };
   }
@@ -244,7 +246,7 @@ d3.json('./data/info_dataset.json').then(
    * @property {string} period - name of the art period
    * @property {number} orders - the number of frequency
    */
-  const periodFreq = [];
+  let periodFreq = [];
   // isolating the period key and also counting the frequncy of each period
   data.forEach(function (a) {
       if (!this[a.period]) {
@@ -260,15 +262,16 @@ d3.json('./data/info_dataset.json').then(
   const periodComparator = (a, b) => {
     return b.orders - a.orders;
   };
-  periodFreq.sort(periodComparator).slice(0, 11);
+  periodFreq.sort(periodComparator);
+  periodFreq = periodFreq.slice(0, 11);
 
-  //  Mapping the period values as keys and the frequency as values in the perioddata object array
+  //  Mapping the period values as keys and the frequency as value in the perioddata object array
   const periodList = periodFreq.map(a => a.period);
   const periodOrders = periodFreq.map(a => a.orders);
     /**
    * Object array where period values are keys and the frequency are values
    * @typedef {Object} periodData
-   * @property {key} period - name of the art period
+   * @property {string} period - name of the art period
    * @property {number} orders - the number of frequency
    */
   const periodData = Object.fromEntries(

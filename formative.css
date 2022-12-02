@@ -1,9 +1,8 @@
 
 body{ 
-  background-color: rgb(223, 223, 223);
   font-family: barlow;
   margin-bottom: 5em;
-  background-image: url(background.webp);
+  background-image: url(/image/background.webp);
   background-repeat:repeat;
 }
 

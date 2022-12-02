@@ -18,7 +18,7 @@ Run code through a web server with Python shell / terminal
 ```
 
 ## Overview
-- The website header includes the website name on the right and a button which directs user to the dataset used in the project: https://www.kaggle.com/datasets/ansonnnnn/historic-art
+- The website header includes the website name on the right and a button which directs users to the dataset used in the project: https://www.kaggle.com/datasets/ansonnnnn/historic-art
 
 ![Alt text](/image/header.png?raw=true "Optional Title")
 
@@ -35,10 +35,10 @@ Run code through a web server with Python shell / terminal
   - the second button is to show and hide a bar chart showing the amount of artwork created in different art period 
 
 ![Alt text](/image/buttons.png?raw=true "Optional Title")
+- The barchart is interactive so if users hover on each bar they can view the exact value of it.
 - After clicking on both button, the two charts should be shown as follows,
 
 ![Alt text](/image/charts.png?raw=true "Optional Title")
-- The barchart is interactive so if user hover on each bar they can view the exact value of it.
 
 - The next section is for displaying artworks of Gogh, Vincent van, each artwork consists:
   - the image of artwork itself
@@ -49,4 +49,11 @@ Run code through a web server with Python shell / terminal
 
 - The next section is a form which ask users which artist and what artwork they want to see in the future, users can either input in one or both of the questions.
 
+![Alt text](/image/input.png?raw=true "Optional Title")
+- if the users sucessfully input any value in one or both of the questions, an alert will pop up indicates a sucessful submittion 
+
+![Alt text](/image/sucess.png?raw=true "Optional Title")
+
+- Otherwise, an alert will pop up indicates a error
+![Alt text](/image/error.png?raw=true "Optional Title")
 

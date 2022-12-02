@@ -1,34 +1,41 @@
-@font-face {
-  font-family: barlow;
-  src: url(https://fonts.googleapis.com/css?family=Barlow);
-}
-
-
 
 body{ 
   background-color: rgb(223, 223, 223);
   font-family: barlow;
-  margin-bottom: 10em;
+  margin-bottom: 5em;
   background-image: url(background.webp);
   background-repeat:repeat;
 }
 
-.container {
-  width: 100%;
+.header{
+margin-bottom: 100px;
+width: 93%;
+margin-left: auto;
+margin-right: auto;
+padding-top: 15px;
+padding-bottom: 20px;
+}
 
+.logo h2{
+  font-weight: 900;
 }
 
 .navbar{
-  border: 1px solid black ;
+  border-bottom: 1px solid #c7c7c7;
   position: relative;
   display: flex;
   justify-content: space-between;
-  padding-bottom: 0px;
+  padding-bottom: 10px;
+
 }
 
 .nav-link-item{
-  border: 1px solid black ;
   margin-right: 1px;
+  padding: 10px;
+}
+
+.nav-link-item:hover{
+  background-color:  #c7c7c7 ;
 }
 
 .art {
@@ -36,49 +43,49 @@ body{
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  align-content: space-between;
+  justify-content: space-between;
 }
 
 .art-box {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin-bottom: 4em;
+  margin-bottom: 8em;
 
 }
 
 .art-title {
   text-overflow: ellipsis;
-  overflow: hidden ;
-  max-height: 30px;
+  overflow: hidden;
+  max-height: 4em;
   font-weight: 900;
-  margin-bottom: 2px;
+  font-style: normal;
 }
 
 .art-info{
   text-overflow: ellipsis;
   overflow: hidden ;
-  max-height: 1.5em;
-  font-weight: 100;
+  max-height: 1.3em;
+  font-weight: 80;
   font-style: italic;
+  text-align: center;
 }
 
 .art-header {
   display: flex;
   justify-content: space-between;
   padding-top: 5px;
-}
-
-.art-header-right{
-  display: flex;
-  flex-direction: column-reverse;
+  border-bottom: 1px solid #c7c7c7;
+  margin-bottom: 90px;
 }
 
 .art-img {  
   display: flex;
   align-content: center;
   height: 100%;
-  max-height: 400px;
+  max-height: 500px;
+  margin-bottom: 45px;
+  padding-right: 70px;
 }
 
 .art-img img{
@@ -86,16 +93,30 @@ body{
   max-width: 100%;
   height: auto;
   object-fit: contain;
+  background-color: rgb(215, 211, 185);  
+  padding: 35px;
 }
 
-.art-header-left h4{
-  margin-block-end: 0%; 
+.art-header-left h1{
+  font-size: 19px;
+  letter-spacing: .45rem;
+  color: black;
+  padding-bottom: 10px;
 }
+
 
 .art-description{
   display: flex;
   justify-content: space-between;
+  color: #757575;
+  padding-right: 70px;
 }
+
+.art-title-info div{
+  font-size: 14px;
+  height: 27.4px;
+}
+
 
 .download{
   margin-top: 5px;
@@ -103,5 +124,117 @@ body{
 }
 
 .download img{
-  max-height: 30px;
+  max-height: 20px;
+}
+
+.input-section{
+  display: block;
+  margin-top: 10px;
+}
+
+.artist-barchart{
+  text-align: center;
+}
+
+.artist-bar:hover{
+  fill: steelblue;
+}
+
+.artist-barchart svg{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hidden{
+  display: none;
+}
+
+.chart-section{
+  margin-bottom: 70px;
+
+}
+
+.chartBtn{
+  margin-bottom: 10px;
+}
+
+.piesvg{
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+
+
+}
+
+.pietext{
+  font-size: 15px;
+}
+
+.piechart h1{
+  text-align: center;
+}
+
+.all {
+  padding: 0%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: space-between;
+}
+
+.all-header-left{
+  margin-bottom: 25px;
+}
+
+.all-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 5em;
+  padding-right: 50px;
+
+}
+
+.all-title {
+  color: #383838;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-height: 1.5em;
+  font-weight: 900;
+}
+
+.all-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.all-header-right{
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.all-img {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  max-height: 400px;
+  align-content: center;
+  margin-bottom: 10px;
+}
+
+.all-img img{
+  display: flex;
+  max-width: 100%;
+  height: auto;
+  object-fit: fill;
+  border-radius: 10%;
+  padding: 10px;
+  background-color: rgba(193, 130, 79, 0.804);  
+}
+
+.error {
+  background-color: burlywood;
+  font-size: larger;
 }

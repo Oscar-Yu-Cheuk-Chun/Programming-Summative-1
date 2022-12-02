@@ -4,227 +4,400 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap -->
   <!-- CSS only -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
   <!-- JavaScript Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
   </script>
+
   <!-- Barlow Font -->
   <link href='https://fonts.googleapis.com/css?family=Barlow' rel='stylesheet'>
-  <link rel="stylesheet" href="formative.css">
+
   <!-- Stylesheet -->
+  <link rel="stylesheet" href="formative.css">
+
+  <!-- D3.JS -->
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3-scale@4"></script>
+
+  <!-- JS -->
+  <script defer src="formative.js"></script>
+
   <title>Formative 1</title>
 </head>
 <body>
-
-<!-- Adapted from (B(Mark Otto, Bootstrap, 2022)) -->
+<!-- Adapted from (Mark Otto, Bootstrap, 2022) -->
 <!-- Adapted from (Google Font, 2022) -->
+<!-- Adapted from (Patel, 2021) -->
+<!-- Adapted from (Holtz, 2022) -->
 
 <!-- Header -->
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar header navbar-expand-lg">
   <div class="container-fluid">
 
   <!-- Header Left -->
-    <a class="navbar-brand" href="formative.html"><h2>ART GALLERY</h2></a>
+    <a class="navbar-brand logo" href="formative.html"><h2>ART GALLERY</h2></a>
 
-
-
-    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
 
   <!-- Header Right -->
-      <ul class="navbar-nav me-auto me-2 me-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link To Databases  </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link nav-link-item" href="https://www.kaggle.com/datasets/bryanb/abstract-art-gallery" target="_blank" rel="noopener noreferrer">Link 1</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link nav-link-item" href="https://www.kaggle.com/datasets/ipythonx/wikiart-gangogh-creating-art-gan" target="_blank" rel="noopener noreferrer">Link 2</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link nav-link-item" href="https://www.kaggle.com/datasets/vepnar/nft-art-dataset" target="_blank" rel="noopener noreferrer">Link 3</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link nav-link-item" href="https://www.kaggle.com/datasets/metmuseum/the-metropolitan-museum-of-art-open-access" target="_blank" rel="noopener noreferrer">Link 4</a>
-        </li>
-      </ul>
-      
+    <div class="justify-content-end link">
+        <a class="nav-link nav-link-item" href="https://www.kaggle.com/datasets/ansonnnnn/historic-art"  rel="noopener noreferrer">Link To The Database Used</a>
     </div>
   </div>
 </nav>
 
 <!-- art Section -->
-<div class="art-section"> 
+<div class="art-section container"> 
   <div class="art-header container">
+    <!-- art section header -->
       <div class="art-header-left">
-        <h4>classic</h4>
-        <h2>FAMOUS ART</h2>
+        <h1>European</h1>
       </div>
   </div>
+  <!-- images of art section -->
   <div class="container art">
-
-    <div class="art-box col-12 col-md-6 col-lg-4 col-xl-3">
+    <div class="art-box col-12 col-md-6 col-lg-4 ">
       <div class="art-img ">
-        <img src="art-1.jpeg" alt="">
+        <img src="https://www.wga.hu/art/a/aachen/rudolf2.jpg" alt="">
       </div>
       <div class="art-description">
         <div class="art-title-info">
-          <div class="art-title">
-            <h3>“Richard Bill” </h3> 
-          </div>
-          <div class="art-info">
-            John Smibert 1688–1751
-          </div>
+          <div>AACHEN, Hans von</div>
+          <div>“portrait of emperor rudolf ii” ,1606-08</div>  
         </div>
         <div class="download ">
-          <a href="art-1.jpeg" download><img src="download-button.png" alt=""></a>
+          <a href="https://www.wga.hu/art/a/aachen/rudolf2.jpg" download><img src="download-button.png" alt=""></a>
         </div>
       </div>
     </div>
-    <div class="art-box col-12 col-md-6 col-lg-4 col-xl-3">
+    <div class="art-box col-12 col-md-6 col-lg-4  ">
       <div class="art-img ">
-        <img src="art-2.jpeg" alt="">
+        <img src="https://www.wga.hu/art/a/aachen/portrai2.jpg" alt="">
       </div>
       <div class="art-description">
         <div class="art-title-info">
-          <div class="art-title">
-            <h3>“Self-Portrait”</h3> 
-          </div>
-          <div class="art-info">
-            Vincent van Gogh 1889
-          </div>
+          <div>AACHEN, Hans von</div>
+          <div>“portrait of josef heintz” ,1585
+          </div>   
         </div>
         <div class="download ">
-          <a href="art-2.jpeg" download><img src="download-button.png" alt=""></a>
+          <a href="https://www.wga.hu/art/a/aachen/portrai2.jpg" download><img src="download-button.png" alt=""></a>
         </div>
       </div>
     </div>
-    <div class="art-box col-12 col-md-6 col-lg-4 col-xl-3">
+    <div class="art-box col-12 col-md-6 col-lg-4  ">
       <div class="art-img ">
-        <img src="art-3.jpeg" alt="">
+        <img src="https://www.wga.hu/art/a/aachen/portrai3.jpg" alt="">
       </div>
       <div class="art-description">
         <div class="art-title-info">
-          <div class="art-title">
-            <h3>“The Gardener Vallier” </h3> 
-          </div>
-          <div class="art-info">
-            Paul Cézanne 1906
-          </div>
+          <div>AACHEN, Hans von</div>
+          <div>"anna of tyrol” ,1596</div>         
         </div>
         <div class="download ">
-          <a href="art-3.jpeg" download><img src="download-button.png" alt=""></a>
+          <a href="https://www.wga.hu/art/a/aachen/portrai3.jpg" download><img src="download-button.png" alt=""></a>
         </div>
       </div>
     </div>
-    <div class="art-box col-12 col-md-6 col-lg-4 col-xl-3">
+    <div class="art-box col-12 col-md-6 col-lg-4  ">
       <div class="art-img ">
-        <img src="art-4.jpeg" alt="">
+        <img src="https://www.wga.hu/art/c/cranach/lucas_e/12/01princ1.jpg" alt="">
       </div>
       <div class="art-description">
         <div class="art-title-info">
-          <div class="art-title">
-            <h3>“Madonna of the Book” </h3> 
-          </div>
-          <div class="art-info">
-            Sandro Botticelli 1480-1481
-          </div>
+          <div>CRANACH, Lucas the Elder</div>
+          <div>"a prince of saxony” ,1517</div>         
         </div>
         <div class="download ">
-          <a href="art-4.jpeg" download><img src="download-button.png" alt=""></a>
+          <a href="https://www.wga.hu/art/c/cranach/lucas_e/12/01princ1.jpg" download><img src="download-button.png" alt=""></a>
         </div>
       </div>
     </div>
-    <div class="art-box col-12 col-md-6 col-lg-4 col-xl-3">
+    <div class="art-box col-12 col-md-6 col-lg-4  ">
       <div class="art-img ">
-        <img src="art-5.jpeg" alt="">
+        <img src="https://www.wga.hu/art/c/cranach/lucas_e/11/03juris1.jpg" alt="">
       </div>
       <div class="art-description">
         <div class="art-title-info">
-          <div class="art-title">
-            <h3>“White Poodle in a Punt”</h3> 
-          </div>
-          <div class="art-info">
-            George Stubbs 1780
-          </div>
+          <div>CRANACH, Lucas the Elder</div>
+          <div>"portrait of a jurist” ,1503</div>         
         </div>
         <div class="download ">
-          <a href="art-5.jpeg" download><img src="download-button.png" alt=""></a>
+          <a href="https://www.wga.hu/art/c/cranach/lucas_e/11/03juris1.jpg" download><img src="download-button.png" alt=""></a>
         </div>
       </div>
     </div>
-    <div class="art-box col-12 col-md-6 col-lg-4 col-xl-3">
+    <div class="art-box col-12 col-md-6 col-lg-4  ">
       <div class="art-img ">
-        <img src="art-6.jpeg" alt="">
+        <img src="https://www.wga.hu/art/c/cranach/lucas_e/12/01princ2.jpg" alt="">
       </div>
       <div class="art-description">
         <div class="art-title-info">
-          <div class="art-title">
-            <h3>“Self-Portrait” </h3> 
-          </div>
-          <div class="art-info">
-            Rembrandt van Rijn 1659
-          </div>
+          <div>CRANACH, Lucas the Elder</div>
+          <div>"a princess of saxony” ,1517</div>         
         </div>
         <div class="download ">
-          <a href="art-6.jpeg" download><img src="download-button.png" alt=""></a>
+          <a href="https://www.wga.hu/art/c/cranach/lucas_e/12/01princ2.jpg" download><img src="download-button.png" alt=""></a>
         </div>
       </div>
     </div>
-    <div class="art-box col-12 col-md-6 col-lg-4 col-xl-3">
+    <div class="art-box col-12 col-md-6 col-lg-4  ">
       <div class="art-img ">
-        <img src="art-7.jpeg" alt="">
+        <img src="https://www.wga.hu/art/g/giotto/padova/7vicevir/virtu_2.jpg" alt="">
       </div>
       <div class="art-description">
         <div class="art-title-info">
-          <div class="art-title">
-            <h3>“Alfred la Guigne”</h3> 
-          </div>
-          <div class="art-info">
-            Henri de Toulouse-Lautrec 1894
-          </div>
+          <div>GIOTTO di Bondone</div>
+          <div>"no. 48 the seven vices: envy” ,1306</div>         
         </div>
         <div class="download ">
-          <a href="art-7.jpeg" download><img src="download-button.png" alt=""></a>
+          <a href="https://www.wga.hu/art/g/giotto/padova/7vicevir/virtu_2.jpg" download><img src="download-button.png" alt=""></a>
         </div>
       </div>
     </div>
-    <div class="art-box col-12 col-md-6 col-lg-4 col-xl-3">
+    <div class="art-box col-12 col-md-6 col-lg-4  ">
       <div class="art-img ">
-        <img src="art-8.jpeg" alt="">
+        <img src="https://www.wga.hu/art/g/giotto/padova/7vicevir/vice_4.jpg" alt="">
       </div>
       <div class="art-description">
         <div class="art-title-info">
-          <div class="art-title">
-            <h3>“Flowers in a Rococo Vase”</h3> 
-          </div>
-          <div class="art-info">
-            Paul Cézanne 1876
-          </div>
+          <div>GIOTTO di Bondone</div>
+          <div>"no. 50 the seven vices: injustice” ,1306</div>         
         </div>
         <div class="download ">
-          <a href="art-8.jpeg" download><img src="download-button.png" alt=""></a>
+          <a href="https://www.wga.hu/art/g/giotto/padova/7vicevir/vice_4.jpg" download><img src="download-button.png" alt=""></a>
         </div>
       </div>
     </div>
-
+    <div class="art-box col-12 col-md-6 col-lg-4  ">
+      <div class="art-img ">
+        <img src="https://www.wga.hu/art/g/giotto/padova/7vicevir/vice_7.jpg" alt="">
+      </div>
+      <div class="art-description">
+        <div class="art-title-info">
+          <div>GIOTTO di Bondone</div>
+          <div>"no. 53 the seven vices: foolishness” ,1306</div>         
+        </div>
+        <div class="download ">
+          <a href="https://www.wga.hu/art/g/giotto/padova/7vicevir/vice_7.jpg" download><img src="download-button.png" alt=""></a>
+        </div>
+      </div>
+    </div>
+    <div class="art-box col-12 col-md-6 col-lg-4  ">
+      <div class="art-img ">
+        <img src="https://www.wga.hu/art/a/aelst/still_fr.jpg" alt="">
+      </div>
+      <div class="art-description">
+        <div class="art-title-info">
+          <div>RAELST, Willem van</div>
+          <div>"still-life with fruit and crystal vase” ,1652</div>         
+        </div>
+        <div class="download ">
+          <a href="https://www.wga.hu/art/a/aelst/still_fr.jpg" download><img src="download-button.png" alt=""></a>
+        </div>
+      </div>
+    </div>
+    <div class="art-box col-12 col-md-6 col-lg-4  ">
+      <div class="art-img ">
+        <img src="https://www.wga.hu/art/a/aelst/stillfru.jpg" alt="">
+      </div>
+      <div class="art-description">
+        <div class="art-title-info">
+          <div>AELST, Willem van</div>
+          <div>"still-life with fruit” ,1664</div>         
+        </div>
+        <div class="download ">
+          <a href="https://www.wga.hu/art/a/aelst/stillfru.jpg" download><img src="download-button.png" alt=""></a>
+        </div>
+      </div>
+    </div>
+    <div class="art-box col-12 col-md-6 col-lg-4  ">
+      <div class="art-img ">
+        <img src="https://www.wga.hu/art/a/aelst/breakfas.jpg" alt="">
+      </div>
+      <div class="art-description">
+        <div class="art-title-info">
+          <div>AELST, Willem van</div>
+          <div>"breakfast piece" ,1671</div>         
+        </div>
+        <div class="download ">
+          <a href="https://www.wga.hu/art/a/aelst/breakfas.jpg" download><img src="download-button.png" alt=""></a>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
-<!-- Input Section -->
-  <div class="container">
-    <div class="input-group mb-3">
-      <input type="text" class="form-control" placeholder="What Art Do You Want To See Next?" aria-label="What Art Do You Want To See Next?" aria-describedby="button-addon2">
-      <button class="btn btn-success" type="button" id="button-addon2">Submit</button>
-    </div>
+<!-- chart Section -->
+<div class="chart-section">
 
+  <!-- Bar Chart -->
+  <div>
+    <!-- button to show and hide the chart -->
+    <button class="btn btn-success d-grid gap-2 col-6 mx-auto chartBtn" type="button">Click to see bar chart</button>
+  </div>  
+  <div class="artist-barchart hidden" id="artist-barchart">
+    <h1>Top 20 Artist Who Made Most Artworks</h1>
+    <div>(hover to see exact values)</div>
+    <!-- location of the chart -->
   </div>
+
+  <!-- Pie Chart -->
+  <div>
+    <!-- button to show and hide the chart -->
+    <button class="btn btn-success d-grid gap-2 col-6 mx-auto chartBtn" type="button">Click to see pie chart</button>
+  </div>  
+  <div class="piechart hidden" id="piechart">
+    <h1>Amount Of Artworks In Different Periods</h1>
+    <!-- location of the chart -->
+  </div>
+</div>
+
+<!-- van Gogh Section -->
+<div class="all-section">
+  <div class="all-header container">
+    <div class="all-header-left">
+      <h1>GOGH, Vincent van</h1>
+    </div>
+</div>
+<div class="container all">
+  <!-- images of van Gogh section -->
+  <div class="all-box col-12 col-md-4 col-lg-3">
+    <div class="all-img ">
+      <img src="https://www.wga.hu/art/g/gogh_van/15/auvers20.jpg" alt="">
+    </div>
+    <div class="all-title">
+      " houses in auvers "
+    </div>
+  </div>
+  <div class="all-box col-12 col-md-4 col-lg-3">
+    <div class="all-img ">
+      <img src="https://www.wga.hu/art/g/gogh_van/15/auvers21.jpg" alt="">
+    </div>
+    <div class="all-title">
+      " landscape with carriage and train "
+    </div>
+  </div>    
+  <div class="all-box col-12 col-md-4 col-lg-3">
+    <div class="all-img ">
+      <img src="https://www.wga.hu/art/g/gogh_van/15/auvers22.jpg" alt="">
+    </div>
+    <div class="all-title">
+      " vineyards with a view of auvers "
+    </div>
+  </div>    
+  <div class="all-box col-12 col-md-4 col-lg-3">
+    <div class="all-img ">
+      <img src="https://www.wga.hu/art/g/gogh_van/15/auvers23.jpg" alt="">
+    </div>
+    <div class="all-title">
+      " thatched cottage in cordeville "
+    </div>
+  </div>    
+  <div class="all-box col-12 col-md-4 col-lg-3">
+    <div class="all-img ">
+      <img src="https://www.wga.hu/art/g/gogh_van/15/auvers10.jpg" alt="">
+    </div>
+    <div class="all-title">
+      " village street and steps in auvers with figures "
+    </div>
+  </div>    
+  <div class="all-box col-12 col-md-4 col-lg-3">
+    <div class="all-img ">
+      <img src="https://www.wga.hu/art/g/gogh_van/15/auvers11.jpg" alt="">
+    </div>
+    <div class="all-title">
+      " village street and steps in auvers with two figures "
+    </div>
+  </div>    
+  <div class="all-box col-12 col-md-4 col-lg-3">
+    <div class="all-img ">
+      <img src="https://www.wga.hu/art/g/gogh_van/15/auvers07.jpg" alt="">
+    </div>
+    <div class="all-title">
+      " old farmhouses in auvers "
+    </div>
+  </div>
+  <div class="all-box col-12 col-md-4 col-lg-3">
+    <div class="all-img ">
+      <img src="https://www.wga.hu/art/g/gogh_van/15/auvers06.jpg" alt="">
+    </div>
+    <div class="all-title">
+      " village street in auvers "
+    </div>
+  </div>
+  <div class="all-box col-12 col-md-4 col-lg-3">
+    <div class="all-img ">
+      <img src="https://www.wga.hu/art/g/gogh_van/15/auvers26.jpg" alt="">
+    </div>
+    <div class="all-title">
+      " cows (after jordaens) "
+    </div>
+  </div>    
+  <div class="all-box col-12 col-md-4 col-lg-3">
+    <div class="all-img ">
+      <img src="https://www.wga.hu/art/g/gogh_van/15/auvers15.jpg" alt="">
+    </div>
+    <div class="all-title">
+      " marguerite gachet in the garden "
+    </div>
+  </div>    
+  <div class="all-box col-12 col-md-4 col-lg-3">
+    <div class="all-img ">
+      <img src="https://www.wga.hu/art/g/gogh_van/15/auvers05.jpg" alt="">
+    </div>
+    <div class="all-title">
+      " les vessenots in auvers "
+    </div>
+  </div>
+  <div class="all-box col-12 col-md-4 col-lg-3">
+    <div class="all-img ">
+      <img src="https://www.wga.hu/art/g/gogh_van/15/auvers03.jpg" alt="">
+    </div>
+    <div class="all-title">
+      " blossoming chestnut branches in a vase "
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Input Section -->
+  <form class="container" id="form">
+    <div class="mb-3">
+      <label for="artistWish" class="form-label">Artist</label>
+      <!-- input box for artist name -->
+      <input type="text"  placeholder="Who Do You Want To See Next?" class="form-control" id="artistWish" >
+    </div>
+    <div class="mb-3">
+      <label for="artworkWish" class="form-label">Artwork</label>
+      <!-- input box for artwork name -->
+      <input type="text" placeholder="Which Artwork Do You Want To See Next?" class="form-control" id="artworkWish">
+    </div>
+    <!-- button for sumbit the user input -->
+    <button type="submit" id="submit" class="btn btn-success">Submit</button>
+  </form>
+
+
 
 
 <!-- Harvard referencing  -->
+
+<!-- Font -->
 <!-- Google Font (2022) Google fonts: Barlow. Google. Available at: https://fonts.google.com/specimen/Barlow?query=BARLOW (Accessed: October 31, 2022).  -->
+
+<!-- Bootstrap -->
 <!-- Mark Otto, J.T. (2022) Bootstrap, Bootstrap · The most popular HTML, CSS, and JS library in the world. Available at: https://getbootstrap.com/ (Accessed: October 31, 2022).  -->
+
+<!-- Counting the frequency of data -->
+<!-- Patel, A. (2021) How to count the same property values in array of objects, Medium. JavaScript in Plain English. Available at: https://javascript.plainenglish.io/how-to-count-the-same-property-values-in-array-of-objects-cc4719c5fc6d (Accessed: November 30, 2022).  -->
+
+<!-- Pie chart -->
+<!-- Holtz, Y. (2022) Basic barplot in d3.js. Available at: https://d3-graph-gallery.com/graph/barplot_basic.html (Accessed: November 30, 2022).  -->
+
+<!-- Bar chart -->
+<!-- Holtz, Y. (2022) Donut chart with Group label in d3.js, The D3 Graph Gallery – Simple charts made with d3.js. Available at: https://d3-graph-gallery.com/graph/donut_label.html (Accessed: November 30, 2022).  -->
 
 </body>
 </html>

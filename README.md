@@ -18,7 +18,7 @@ Art Gallery is an interactive website which displays beautiful European artworks
 ```
 
 ## Overview
-- The website header includes the website name on the right and a button which directs users to the dataset used in the project: https://www.kaggle.com/datasets/ansonnnnn/historic-art
+### The header includes the website name on the right and a button which directs users to the dataset used in the project: https://www.kaggle.com/datasets/ansonnnnn/historic-art
 
 ![Alt text](/image/header.png?raw=true "Optional Title")
 
@@ -28,7 +28,7 @@ Art Gallery is an interactive website which displays beautiful European artworks
   - a download button to download the image 
 - The section is screensize responsive so the grid of the images will change according to the screensize
 
-![Alt text](/image/image.png?raw=true "Optional Title")
+![Alt text](/image/artwork.png?raw=true "Optional Title")
 
 - The next section is two buttons which can individually shows and hide a chart 
   - the first button is to show and hide a bar chart showing the top 20 artist who created most artwork in the dataset

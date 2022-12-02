@@ -26,15 +26,16 @@ Run code through a web server with Python shell / terminal
   - the image of artwork itself
   - desription for the artwork's name, author and year of creation
   - a download button to download the image 
+- The section is screensize responsive so the grid of the images will change according to the screensize
 
 ![Alt text](/image/image.png?raw=true "Optional Title")
-- The section is screensize responsive so the grid of the images will change according to the screensize
 
 - The next section is two buttons which can individually shows and hide a chart 
   - the first button is to show and hide a bar chart showing the top 20 artist who created most artwork in the dataset
   - the second button is to show and hide a bar chart showing the amount of artwork created in different art period 
 
 ![Alt text](/image/buttons.png?raw=true "Optional Title")
+
 - The barchart is interactive so if users hover on each bar they can view the exact value of it.
 - After clicking on both button, the two charts should be shown as follows,
 
@@ -43,9 +44,9 @@ Run code through a web server with Python shell / terminal
 - The next section is for displaying artworks of Gogh, Vincent van, each artwork consists:
   - the image of artwork itself
   - desription for the artwork's name
+- The section is screensize responsive so the grid of the images will change according to the screensize
 
 ![Alt text](/image/van_gogh.png?raw=true "Optional Title")
-- The section is screensize responsive so the grid of the images will change according to the screensize
 
 - The next section is a form which ask users which artist and what artwork they want to see in the future, users can either input in one or both of the questions.
 

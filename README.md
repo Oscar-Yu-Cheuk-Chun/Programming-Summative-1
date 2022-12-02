@@ -56,3 +56,4 @@ Run code through a web server with Python shell / terminal
 
 - Otherwise, an alert will pop up indicates a error
 
+![Alt text](/image/error.png?raw=true "Optional Title")

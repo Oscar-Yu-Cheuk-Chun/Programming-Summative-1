@@ -239,7 +239,6 @@ d3.json('./data/info_dataset.json').then(
     .append('g')
       .attr('transform', `translate(${width / 2},${height / 2})`);
 
-  // isolating the artist key and also counting the frequncy of each artist
   /**
    * Object array of all artist and the frequency in the dataset which is sorted in descending order of the frequency
    * @typedef {Object} periodFreq
@@ -264,16 +263,16 @@ d3.json('./data/info_dataset.json').then(
   };
   periodFreq.sort(periodComparator);
   periodFreq = periodFreq.slice(0, 11);
-
-  //  Mapping the period values as keys and the frequency as value in the perioddata object array
+  //  Creating two array consist of art period names and frequency 
   const periodList = periodFreq.map(a => a.period);
   const periodOrders = periodFreq.map(a => a.orders);
     /**
-   * Object array where period values are keys and the frequency are values
+   * Object array where period names are keys and the frequency are values
    * @typedef {Object} periodData
    * @property {string} period - name of the art period
    * @property {number} orders - the number of frequency
    */
+    //  Mapping the period names as keys and the frequency as value into the perioddata object array
   const periodData = Object.fromEntries(
     periodList.map((periodListvalue, index) => [periodListvalue, periodOrders[index]]));
 

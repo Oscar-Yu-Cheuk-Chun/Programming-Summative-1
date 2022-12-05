@@ -229,7 +229,25 @@ d3.json('./data/info_dataset.json').then(
           return d.orders;
         });
 
-  //  Pie chart //
+//  JS for Pie Chart
+d3.json('./data/info_dataset.json').then(
+  /**
+   * fetching the entire infomation dataset which contain information about the artists
+   * @function
+   * @module infoDataset
+  */
+  function (data) {
+  /**
+   * Object array of the dataset sorted by id
+   * @typedef {Object} data
+   * @property {string} artist - The name of the artists
+   * @property {string} base - The location of the artist
+   * @property {string} born_died - The year when the artist were born, died, or active
+   * @property {string} nationality - The nationality of the artist
+   * @property {string} period - The time period of the artist
+   * @property {string} school - The artist's area of expertise
+   * @property {link} url - The web address to the artist page
+   */
 
   // set the dimensions and margins of the pie graph
   const pieWidth = 1000;
@@ -240,7 +258,7 @@ d3.json('./data/info_dataset.json').then(
   const radius = Math.min(pieWidth, pieHeight) / 2 - pieMargin;
 
   // append the svg object to the div called 'piechart'
-  const pieSvg = d3.select('#piechart')
+  const svg = d3.select('#piechart')
     .append('svg')
       .attr('width', pieWidth)
       .attr('height', pieHeight)
@@ -315,3 +333,4 @@ d3.json('./data/info_dataset.json').then(
           return (midangle < Math.PI ? 'start' : 'end');
       });
 });
+};

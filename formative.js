@@ -215,7 +215,7 @@ d3.json('./data/info_dataset.json').then(
    * @typedef {Object} data
    * @property {string} artist - The name of the artists
    * @property {string} base - The location of the artist
-   * @property {sting} born_died - The year when the artist were born, died, or active
+   * @property {string} born_died - The year when the artist were born, died, or active
    * @property {string} nationality - The nationality of the artist
    * @property {string} period - The time period of the artist
    * @property {string} school - The artist's area of expertise
@@ -230,7 +230,7 @@ d3.json('./data/info_dataset.json').then(
   // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
   const radius = Math.min(width, height) / 2 - margin;
 
-  // append the svg object to the div called 'my_dataviz'
+  // append the svg object to the div called 'piechart'
   const svg = d3.select('#piechart')
     .append('svg')
       .attr('width', width)
@@ -238,8 +238,6 @@ d3.json('./data/info_dataset.json').then(
       .attr('class', 'piesvg')
     .append('g')
       .attr('transform', `translate(${width / 2},${height / 2})`);
-
-  // isolating the artist key and also counting the frequncy of each artist
   /**
    * Object array of all artist and the frequency in the dataset which is sorted in descending order of the frequency
    * @typedef {Object} periodFreq
@@ -247,7 +245,7 @@ d3.json('./data/info_dataset.json').then(
    * @property {number} orders - the number of frequency
    */
   let periodFreq = [];
-  // isolating the period key and also counting the frequncy of each period
+  // isolating the period name key and also counting the frequncy of each period
   data.forEach(function (a) {
       if (!this[a.period]) {
           this[a.period] = {
@@ -265,15 +263,16 @@ d3.json('./data/info_dataset.json').then(
   periodFreq.sort(periodComparator);
   periodFreq = periodFreq.slice(0, 11);
 
-  //  Mapping the period values as keys and the frequency as value in the perioddata object array
+  //  Creating a array of period names and an array of their frequency
   const periodList = periodFreq.map(a => a.period);
   const periodOrders = periodFreq.map(a => a.orders);
     /**
-   * Object array where period values are keys and the frequency are values
+   * Object array where period name are keys and the frequency are values
    * @typedef {Object} periodData
    * @property {string} period - name of the art period
    * @property {number} orders - the number of frequency
    */
+    //  Mapping the period names as keys and the frequency as value into the perioddata object array
   const periodData = Object.fromEntries(
     periodList.map((periodListvalue, index) => [periodListvalue, periodOrders[index]]));
 

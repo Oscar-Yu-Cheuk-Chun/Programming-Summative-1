@@ -96,118 +96,18 @@ document.addEventListener('DOMContentLoaded', () => {
       window.alert('You have sucessfully submitted your request!!');
       //  documenting the inputs in the console
       console.log(wishlist);
+      //  saving wishlist to local storage
+      localStorage.setItem('wishlist', JSON.stringify(wishlist));
     };
   }
   );
 });
 
-//  JS for Bar chart
-// set the dimensions and margins of the graph
-const margin = { top: 20, right: 20, bottom: 160, left: 40 };
-const width = 1000 - margin.left - margin.right;
-const height = 600 - margin.top - margin.bottom;
-
-// append the svg object to the body of the page
-const svg = d3.select('#artist-barchart')
-  .append('svg')
-    .attr('width', width + margin.left + margin.right)
-    .attr('height', height + margin.top + margin.bottom)
-  .append('g')
-    .attr('transform', `translate(${margin.left},${margin.top})`);
-
-// Parse the Data
-d3.json('./data/artwork_dataset1.json').then(
-  /**
-   * fetching the entire artwork dataset which contain information about artworks
-   * @module artworkDataset
-   */
-  function (data) {
-  /**
-   * Object array of the dataset sorted by id
-   * @typedef {Object} data
-   * @property {number} id - Image ID, corresponding to the images in the artwork folder
-   * @property {string} artist - The artist who created the artwork
-   * @property {string} file_info - dimension of the art, color and file size
-   * @property {link} jpg_url - the url link of the artwork image file
-   * @property {string} picture_date - the date and the location which the artwork was created
-   * @property {string} title - The title of the artwork
-   */
-
-  /**
-   * Object array of all artist and the frequency in the dataset which is sorted in descending order of the frequency
-   * @typedef {Object} artistFreq
-   * @property {id} artist - name of the artist
-   * @property {number} orders - the number of frequency
-   */
-  const artistFreq = [];
-  // isolating the artist key and also counting the frequncy of each artist
-  data.forEach(function (a) {
-      if (!this[a.artist]) {
-          this[a.artist] = {
-            artist: a.artist,
-            orders: 0
-          };
-          artistFreq.push(this[a.artist]);
-      }
-      this[a.artist].orders += 1;
-  }, Object.create(null));
-  //  Sorting the artistFreq list in descending order
-  const comparator = (a, b) => {
-    return b.orders - a.orders;
-  };
-  artistFreq.sort(comparator);
-  //  Slice the top 20 results to show in the bar chart
-  /**
-   * Object array that sliced the top 20 results in artistFreq
-   * @typedef {Object} artistData
-   * @property {string} artist - name of the artist
-   * @property {number} orders - the number of frequency
-   */
-  const artistData = artistFreq.slice(0, 20);
-  // X axis
-  const x = d3.scaleBand()
-    .range([0, width])
-    .domain(artistData.map(d => d.artist))
-    .padding(0.2);
-  svg.append('g')
-    .attr('transform', `translate(0, ${height})`)
-    .call(d3.axisBottom(x))
-    .selectAll('text')
-      .attr('transform', 'translate(-10,0)rotate(-45)')
-      .style('text-anchor', 'end');
-  // the highest number of frequency in the dataset
-  const artitstMax = Math.max(...artistFreq.map(o => o.orders));
-
-  // Add Y axis
-  const y = d3.scaleLinear()
-    .domain([0, artitstMax])
-    .range([height, 0]);
-  svg.append('g')
-    .call(d3.axisLeft(y));
-
-  // Bars
-  svg.selectAll('artist-bar')
-    .data(artistData)
-    .join('rect')
-      .attr('x', d => x(d.artist))
-      .attr('y', d => y(d.orders))
-      .attr('width', x.bandwidth())
-      .attr('height', d => height - y(d.orders))
-      .attr('fill', 'rgb(98, 104, 109)')
-      .attr('class', 'artist-bar')
-      .append('title')
-      .text((d) => {
-          return d.orders;
-        });
-}
-);
-
-//  JS for Pie Chart
 d3.json('./data/info_dataset.json').then(
   /**
    * fetching the entire infomation dataset which contain information about the artists
    * @function
-   * @module infoDataset
+   * @module Dataset
   */
   function (data) {
   /**
@@ -215,38 +115,22 @@ d3.json('./data/info_dataset.json').then(
    * @typedef {Object} data
    * @property {string} artist - The name of the artists
    * @property {string} base - The location of the artist
-   * @property {sting} born_died - The year when the artist were born, died, or active
+   * @property {string} born_died - The year when the artist were born, died, or active
    * @property {string} nationality - The nationality of the artist
    * @property {string} period - The time period of the artist
    * @property {string} school - The artist's area of expertise
    * @property {link} url - The web address to the artist page
    */
 
-  // set the dimensions and margins of the graph
-  const width = 1000;
-  const height = 600;
-  const margin = 50;
-
-  // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
-  const radius = Math.min(width, height) / 2 - margin;
-
-  // append the svg object to the div called 'my_dataviz'
-  const svg = d3.select('#piechart')
-    .append('svg')
-      .attr('width', width)
-      .attr('height', height)
-      .attr('class', 'piesvg')
-    .append('g')
-      .attr('transform', `translate(${width / 2},${height / 2})`);
-
   /**
-   * Object array of all artist and the frequency in the dataset which is sorted in descending order of the frequency
+   * Object array of all artist and their frequency in the dataset
    * @typedef {Object} periodFreq
    * @property {string} period - name of the art period
    * @property {number} orders - the number of frequency
    */
-  let periodFreq = [];
-  // isolating the period key and also counting the frequncy of each period
+  const periodFreq = [];
+
+  // isolating the period name key and also counting the frequncy of each period
   data.forEach(function (a) {
       if (!this[a.period]) {
           this[a.period] = {
@@ -257,24 +141,112 @@ d3.json('./data/info_dataset.json').then(
       }
       this[a.period].orders += 1;
   }, Object.create(null));
+
+  /**
+   * periodFreq sorted in descending order of the frequency used for creating barchart
+   * @typedef {Object} sorted
+   * @property {string} period - name of the art period
+   * @property {number} orders - the number of frequency
+   */
+  const sorted = JSON.parse(JSON.stringify(periodFreq));
   //  Sorting the artistFreq list in descending order
   const periodComparator = (a, b) => {
     return b.orders - a.orders;
   };
-  periodFreq.sort(periodComparator);
-  periodFreq = periodFreq.slice(0, 11);
-  //  Creating two array consist of art period names and frequency 
+  sorted.sort(periodComparator);
+
+  /**
+   * The total number of data, used to calculate the percentage of the pie chart
+   * @typedef {number} orderSum
+   * @returns {number} total number of data
+   */
+  const orderSum = periodFreq.reduce((accumulator, object) => {
+    return accumulator + object.orders;
+  }, 0);
+
+  //  Creating a array of period names and an array of their frequency
   const periodList = periodFreq.map(a => a.period);
   const periodOrders = periodFreq.map(a => a.orders);
+
     /**
-   * Object array where period names are keys and the frequency are values
-   * @typedef {Object} periodData
+   * Object array where period name are keys and the frequency are values used for creating pie chart
+   * @typedef {Object} periodPie
    * @property {string} period - name of the art period
    * @property {number} orders - the number of frequency
    */
     //  Mapping the period names as keys and the frequency as value into the perioddata object array
-  const periodData = Object.fromEntries(
+  const periodPie = Object.fromEntries(
     periodList.map((periodListvalue, index) => [periodListvalue, periodOrders[index]]));
+
+  //  Bar chart //
+
+  // set the dimensions and margins of the graph
+  const barchartMargin = { top: 20, right: 20, bottom: 160, left: 40 };
+  const barchartwidth = 1000 - barchartMargin.left - barchartMargin.right;
+  const barchartHeight = 600 - barchartMargin.top - barchartMargin.bottom;
+
+  // append the svg object to the body of the page
+  const barchartSvg = d3.select('#artist-barchart')
+  .append('svg')
+    .attr('width', barchartwidth + barchartMargin.left + barchartMargin.right)
+    .attr('height', barchartHeight + barchartMargin.top + barchartMargin.bottom)
+  .append('g')
+    .attr('transform', `translate(${barchartMargin.left},${barchartMargin.top})`);
+
+  // barchart X axis
+  const barX = d3.scaleBand()
+    .range([0, barchartwidth])
+    .domain(sorted.map(d => d.period))
+    .padding(0.2);
+  barchartSvg.append('g')
+    .attr('transform', `translate(0, ${barchartHeight})`)
+    .call(d3.axisBottom(barX))
+    .selectAll('text')
+      .attr('transform', 'translate(-10,0)rotate(-45)')
+      .style('text-anchor', 'end');
+  // the highest number of frequency in the dataset
+  const periodMax = Math.max(...sorted.map(o => o.orders));
+
+  // Add barchart Y axis
+  const barY = d3.scaleLinear()
+    .domain([0, periodMax])
+    .range([barchartHeight, 0]);
+  barchartSvg.append('g')
+    .call(d3.axisLeft(barY));
+
+  // Bars
+  barchartSvg.selectAll('artist-bar')
+    .data(sorted)
+    .join('rect')
+      .attr('x', d => barX(d.period))
+      .attr('y', d => barY(d.orders))
+      .attr('width', barX.bandwidth())
+      .attr('height', d => barchartHeight - barY(d.orders))
+      .attr('fill', 'rgb(98, 104, 109)')
+      .attr('class', 'artist-bar')
+      .append('title')
+      .text((d) => {
+          return d.orders;
+        });
+
+  //  Pie chart //
+
+  // set the dimensions and margins of the pie graph
+  const pieWidth = 1000;
+  const pieHeight = 600;
+  const pieMargin = 50;
+
+  // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
+  const radius = Math.min(pieWidth, pieHeight) / 2 - pieMargin;
+
+  // append the svg object to the div called 'piechart'
+  const pieSvg = d3.select('#piechart')
+    .append('svg')
+      .attr('width', pieWidth)
+      .attr('height', pieHeight)
+      .attr('class', 'piesvg')
+    .append('g')
+      .attr('transform', `translate(${pieWidth / 2},${pieHeight / 2})`);
 
   // set the color scale
   const color = d3.scaleOrdinal()
@@ -285,7 +257,7 @@ d3.json('./data/info_dataset.json').then(
   const pie = d3.pie()
     .sort(null) // Do not sort group by size
     .value(d => d[1]);
-  const dataready = pie(Object.entries(periodData));
+  const dataready = pie(Object.entries(periodPie));
 
   // The arc generator
   const arc = d3.arc()
@@ -295,10 +267,10 @@ d3.json('./data/info_dataset.json').then(
   // Another arc that won't be drawn. Just for labels positioning
   const outerArc = d3.arc()
     .innerRadius(radius * 0.9)
-    .outerRadius(radius * 1.15);
+    .outerRadius(radius * 1.2);
 
   // Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
-  svg
+  pieSvg
     .selectAll('allSlices')
     .data(dataready)
     .join('path')
@@ -309,7 +281,7 @@ d3.json('./data/info_dataset.json').then(
     .style('opacity', 0.7);
 
   // Add the polylines between chart and labels:
-  svg
+  pieSvg
     .selectAll('allPolylines')
     .data(dataready)
     .join('polyline')
@@ -326,11 +298,11 @@ d3.json('./data/info_dataset.json').then(
       });
 
   // Add the polylines between chart and labels:
-  svg
+  pieSvg
     .selectAll('allLabels')
     .data(dataready)
     .join('text')
-      .text(d => d.data[0] + ':' + d.data[1])
+      .text(d => d.data[0] + ': ' + (d.data[1] / orderSum * 100).toFixed(1) + '%')
       .attr('class', 'pietext')
       .attr('transform', function (d) {
           const pos = outerArc.centroid(d);

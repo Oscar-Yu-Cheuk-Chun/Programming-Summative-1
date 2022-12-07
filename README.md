@@ -14,7 +14,7 @@ Web Gallery of Art is an interactive website which displays beautiful European a
 ###  Open browser
 ```bash
  Access http://127.0.0.1:8000
- Navigate to http://127.0.0.1:8000/formative.html
+ Navigate  to the directory of formative.html files 
 ```
 
 ## Overview

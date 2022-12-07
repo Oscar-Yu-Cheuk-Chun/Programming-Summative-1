@@ -1,5 +1,5 @@
-# Art Gallery 
-Art Gallery is an interactive website which displays beautiful European artworks, it is contains artwork display, chart about a artwork dataset and an input section to collect user's feedback.
+# Web Gallery of Art
+Web Gallery of Art is an interactive website which displays beautiful European artworks from the 3rd to 19th century, it is contains artwork display, charts about a artwork dataset and an input section to collect user's feedback.
 
 ## How to open
 ### Run code through a web server with Python shell / terminal

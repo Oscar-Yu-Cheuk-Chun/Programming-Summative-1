@@ -60,14 +60,14 @@ Art Gallery is an interactive website which displays beautiful European artworks
 ![Alt text](/image/error.png?raw=true "Optional Title")
 
 ## Reference 
-Google Font (2022) Google fonts: Barlow. Google. Available at: https://fonts.google.com/specimen/Barlow?query=BARLOW (Accessed: October 31, 2022). 
+1. Google Font (2022) Google fonts: Barlow. Google. Available at: https://fonts.google.com/specimen/Barlow?query=BARLOW (Accessed: October 31, 2022). 
 
-Mark Otto, J.T. (2022) Bootstrap, Bootstrap · The most popular HTML, CSS, and JS library in the world. Available at: https://getbootstrap.com/ (Accessed: October 31, 2022). 
+2. Mark Otto, J.T. (2022) Bootstrap, Bootstrap · The most popular HTML, CSS, and JS library in the world. Available at: https://getbootstrap.com/ (Accessed: October 31, 2022). 
 
-Patel, A. (2021) How to count the same property values in array of objects, Medium. JavaScript in Plain English. Available at: https://javascript.plainenglish.io/how-to-count-the-same-property-values-in-array-of-objects-cc4719c5fc6d (Accessed: November 30, 2022). 
+3. Patel, A. (2021) How to count the same property values in array of objects, Medium. JavaScript in Plain English. Available at: https://javascript.plainenglish.io/how-to-count-the-same-property-values-in-array-of-objects-cc4719c5fc6d (Accessed: November 30, 2022). 
 
-Holtz, Y. (2022) Basic barplot in d3.js. Available at: https://d3-graph-gallery.com/pie.html (Accessed: November 30, 2022). 
+4. Holtz, Y. (2022) Basic barplot in d3.js. Available at: https://d3-graph-gallery.com/pie.html (Accessed: November 30, 2022). 
 
-Holtz, Y. (2022) Donut chart with Group label in d3.js, The D3 Graph Gallery – Simple charts made with d3.js. Available at: https://d3-graph-gallery.com/graph/donut_label.html (Accessed: November 30, 2022). 
+5. Holtz, Y. (2022) Donut chart with Group label in d3.js, The D3 Graph Gallery – Simple charts made with d3.js. Available at: https://d3-graph-gallery.com/graph/donut_label.html (Accessed: November 30, 2022). 
 
-Chan, A. (2022) Historic_Art, Kaggle. Available at: https://www.kaggle.com/datasets/ansonnnnn/historic-art (Accessed: December 2, 2022). 
+6. Chan, A. (2022) Historic_Art, Kaggle. Available at: https://www.kaggle.com/datasets/ansonnnnn/historic-art (Accessed: December 2, 2022). 

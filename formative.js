@@ -107,7 +107,7 @@ d3.json('./data/info_dataset.json').then(
   /**
    * fetching the entire infomation dataset which contain information about the artists
    * @function
-   * @module Dataset
+   * @module D3 Dataset
   */
   function (data) {
   /**

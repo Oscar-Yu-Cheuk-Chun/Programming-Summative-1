@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 //  codes for showing and hiding the graphs
 /**
  * The two button elements that is used to show and hide the charts
